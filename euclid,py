@@ -1,0 +1,23 @@
+import sys 
+
+def main():
+    numero1 = int(input("Ingresa el primer numero: \n"))
+    numero2 = int(input("Ingresa el segundo numero: \n"))
+
+    if numero1 < numero2:
+        numer1, numero2 = numero2, numero1
+    elif numero1 == numero2:
+        print(f"El maximo común es {numero1}")
+        sys.exit()
+
+    residuo = None
+    while residuo == None or residuo != 0:
+        residuo = numero1 % numero2
+        if residuo == 0:
+            print(f"El máximo cómun divisor es {numero2}")
+            break
+        numero1 = numero2
+        numero2 = residuo
+
+if __name__=="__main__":
+    main()
